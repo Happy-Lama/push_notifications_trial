@@ -21,7 +21,9 @@ Notification.requestPermission().then((perm) => {
         navigator.serviceWorker.register('sw.js');
         navigator.serviceWorker.ready.then((reg) => {
             console.log("Registered Service worker")
-            reg.showNotification('Notification with ServiceWorker')
+            setTimeout(() => {
+                reg.showNotification('Notification with ServiceWorker')}, 5000
+            )
             console.log('Showed Notification')
         })
     }
